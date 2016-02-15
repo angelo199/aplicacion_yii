@@ -1,15 +1,4 @@
-<?php 
 
-	$form = $this->beginWidgets('CActiveForm', array(
-
-		'method'=>'post',
-		'id'=>'form',
-		'enableClientValidation' => true,
-		'enableAjaxValidation'=> true,
-
-		));
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,38 +6,39 @@
 	<title>Registro del sistema</title>
 </head>
 <body>
+<div class="row">
+	<?php 
+
+		$form = $this->beginWidget('CActiveForm', array(
+
+			'method'=>'post',
+			'id'=>'form',
+			'enableClientValidation' => true,
+			'enableAjaxValidation'=> true,
+
+			));
+
+	?>
 
 	<div class="row">
-		<?php 
-		echo $form->label($model,'id');
-		echo $form->textField($model,'id')
-		?>
+		<?php echo $form->label($model,'id'); ?><br>
+		<?php echo $form->textField($model,'id')?>
 	</div>
 	<div class="row">
-		<?php 
-		echo $form->label($model,'nombre');
-		echo $form->textField($model,'nombre')
-		?>
+		<?php echo $form->label($model,'nombre'); ?><br>
+		<?php echo $form->textField($model,'nombre') ?>
 	</div>
 
 	<div class="row">
-		<?php 
-		echo $form->label($model,'apellido');
-		echo $form->textField($model,'apellido')
-		?>
+		<?php echo $form->label($model,'apellido'); ?><br>
+		<?php echo $form->textField($model,'apellido') ?>
 	</div>
 	<div class="row">
-		<?php 
-		echo $form->label($model,'CI');
-		echo $form->textField($model,'CI')
-		?>
+		<?php echo $form->label($model,'CI'); ?><br>
+		<?php echo $form->textField($model,'CI') ?>
 	</div>
 
-	<?php echo CHtml::submitButton('enviar'); ?>
-
+	<?php echo CHtml::submitButton('Enviar'); ?>
 
 <?php $this->endWidget(); ?>
-
-</body>
-</html>
 

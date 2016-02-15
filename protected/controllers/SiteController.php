@@ -108,8 +108,23 @@ class SiteController extends Controller
 	}
 
 	public function actionRegistro(){
+		$model = new RegistroForm;
 
-		$this->render('registro');
+		if (isset($_POST['RegistroForm'])) 
+		{
+			$model->attributes = $_POST['RegistroForm'];
+
+			if ($model->validate()) 
+			{
+				$model->id = $_POST['RegistroForm']['id'];
+				$model->nombre = $_POST['RegistroForm']['nombre'];
+				$model->apellido = $_POST['RegistroForm']['apellido'];
+				$model->CI = $_POST['RegistroForm']['CI'];
+			}
+
+		}
+
+		$this->render('registro', array('model'=>$model));
 
 	}
 }

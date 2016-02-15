@@ -49,7 +49,20 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		
+		array(
+    
+    'components'=>array(
+        
+        'db'=>array(
+       
+            'connectionString'=>'pgsql:host=127.0.0.1;port=5432;dbname=express',
+            'username'=>'postgres',
+            'password'=>'2692',
+             'charset' => 'utf8',
+          
+        ),
+    ),
+),
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
@@ -58,13 +71,6 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>YII_DEBUG ? null : 'site/error',
 		),
-
-		'db'=>array(
-        'connectionString' => 'pgsql:host=127.0.0.1;port=5432;dbname=express',
-        'username' => 'postgres',
-        'password' => '2692',
-        'charset' => 'utf8',
-        ),
 
 		'log'=>array(
 			'class'=>'CLogRouter',
