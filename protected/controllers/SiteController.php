@@ -109,6 +109,7 @@ class SiteController extends Controller
 
 	public function actionRegistro(){
 		$model = new RegistroForm;
+		$connection=Yii::app()->db;
 
 		if (isset($_POST['RegistroForm'])) 
 		{
@@ -121,6 +122,11 @@ class SiteController extends Controller
 				$model->apellido = $_POST['RegistroForm']['apellido'];
 				$model->CI = $_POST['RegistroForm']['CI'];
 			}
+				$sql = "insert into client (id, nombre, apellido, CI) values ('$model->id', '$model->nombre', '$model->apellido', '$model->CI')";
+
+			$command=$connection->createCommand($sql);
+
+
 
 		}
 
