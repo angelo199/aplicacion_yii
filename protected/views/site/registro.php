@@ -46,7 +46,9 @@
 
 	<?php echo CHtml::submitButton('enviar'); ?>
 
+
+<?php $this->endWidget(); ?>
+
 </body>
 </html>
 
-<?php $form->end();?>
